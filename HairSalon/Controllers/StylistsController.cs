@@ -18,7 +18,7 @@ namespace HairSalon.Controllers
 
     public ActionResult Index()
     {
-      List<Stylist> stylistList = _db.Stylists.Include(stylist.Clients).ToList();
+      List<Stylist> stylistList = _db.Stylists.Include(stylist => stylist.Clients).ToList();
       return View(stylistList);
     }
 
