@@ -1,4 +1,4 @@
-# _{Application Name}_
+# Eu Claire's Salon
 
 #### _{Brief description of application},{Date of current version}_
 
@@ -80,4 +80,4 @@ For any questions or comments, please reach out through GitHub.
 
 [MIT License](license)
 
-Copyright (c) [year] [names]
+Copyright (c) 2021 Vanessa Su
