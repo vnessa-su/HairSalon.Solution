@@ -1,3 +1,12 @@
 @{
   Layout = "_Layout";
 }
+
+@model HairSalon.Models.Stylist
+
+<h2>@Model.Name</h2>
+<hr/>
+<p>@Html.DisplayFor(model => model.StylistLevel) Stylist</p>
+<p>@Html.DisplayNameFor(model => model.PhoneNumber): @Html.DisplayFor(model => model.PhoneNumber)</p>
+<p>@Html.DisplayNameFor(model => model.Email): @Html.DisplayFor(model => model.Email)</p>
+<p>@Html.DisplayNameFor(model => model.Address): @Html.DisplayFor(model => model.Address)</p>
