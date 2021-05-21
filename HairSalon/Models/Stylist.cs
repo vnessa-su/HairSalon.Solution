@@ -5,7 +5,7 @@ namespace HairSalon.Models
 {
   public class Stylist
   {
-    public static List<string> StylistLevelNames {get;} = new List<string>()
+    public static string[] StylistLevelNames {get;} = new[]
     {
       "Junior",
       "Associate",
