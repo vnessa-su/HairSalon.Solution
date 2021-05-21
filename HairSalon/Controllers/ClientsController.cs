@@ -38,28 +38,37 @@ namespace HairSalon.Controllers
 
     public ActionResult Details(int id)
     {
-      return View();
+      Client selectedClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
+      return View(selectedClient);
     }
 
     public ActionResult Edit(int id)
     {
-      return View();
+      Client selectedClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
+      ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
+      return View(selectedClient);
     }
 
     [HttpPost]
-    public ActionResult Edit()
+    public ActionResult Edit(Client client)
     {
+      _db.Entry(client).State = EntityState.Modified;
+      _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Delete(int id)
     {
-      return View();
+      Client selectedClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
+      return View(selectedClient);
     }
 
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
+      Client selectedClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
+      _db.Clients.Remove(selectedClient);
+      _db.SaveChanges();
       return RedirectToAction("Index");
     }
   }
