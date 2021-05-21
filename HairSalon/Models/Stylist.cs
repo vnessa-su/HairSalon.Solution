@@ -13,6 +13,9 @@ namespace HairSalon.Models
     [Display(Name = "Phone Number")]
     public string PhoneNumber {get; set;}
 
+    [Display(Name = "Stylist Level")]
+    public string StylistLevel {get; set;}
+
     public Stylist()
     {
       this.Clients = new HashSet<Client>();
