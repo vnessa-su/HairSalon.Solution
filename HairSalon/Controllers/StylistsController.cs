@@ -24,6 +24,7 @@ namespace HairSalon.Controllers
 
     public ActionResult Create()
     {
+      ViewBag.StylistLevelNames = new SelectList(Stylist.StylistLevelNames);
       return View();
     }
 

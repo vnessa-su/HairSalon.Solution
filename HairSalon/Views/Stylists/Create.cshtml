@@ -16,6 +16,10 @@
   @Html.TextBoxFor(model => model.Email)
   @Html.LabelFor(model => model.Address)
   @Html.TextBoxFor(model => model.Address)
+
+  @Html.LabelFor(model => model.StylistLevel)
+  @Html.DropDownList("StylistLevelNames")
+
   <input type="submit" value="Add Stylist"/>
 }
 
