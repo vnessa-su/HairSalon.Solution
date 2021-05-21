@@ -46,7 +46,7 @@ namespace HairSalon.Controllers
     public ActionResult Edit(int id)
     {
       Stylist selectedStylist = _db.Stylists.Include(stylist => stylist.Clients).FirstOrDefault(stylist => stylist.StylistId == id);
-      ViewBag.StylistLevel = Stylist.StylistLevelNames.Select(name => new SelectListItem {Value = name, Text = name}).ToList();
+      ViewBag.StylistLevel = Stylist.StylistLevelNames.Select(name => new SelectListItem {Value = name, Text = name, Selected = selectedStylist.StylistLevel == name ? true : false}).ToList();
       return View(selectedStylist);
     }
 
