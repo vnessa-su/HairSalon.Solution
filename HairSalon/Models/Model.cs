@@ -1,4 +1,4 @@
-namespace Template.Models
+namespace HairSalon.Models
 {
   public class Model
   {
