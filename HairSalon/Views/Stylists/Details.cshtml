@@ -1,7 +1,7 @@
 @{
   Layout = "_Layout";
 }
-
+@using HairSalon.Models
 @model HairSalon.Models.Stylist
 
 <h2>@Model.Name</h2>
@@ -10,6 +10,14 @@
 <p>@Html.DisplayNameFor(model => model.PhoneNumber): @Html.DisplayFor(model => model.PhoneNumber)</p>
 <p>@Html.DisplayNameFor(model => model.Email): @Html.DisplayFor(model => model.Email)</p>
 <p>@Html.DisplayNameFor(model => model.Address): @Html.DisplayFor(model => model.Address)</p>
+
+<p>@Html.DisplayNameFor(model => model.Clients):</p>
+<ul>
+  @foreach (Client client in Model.Clients)
+  {
+    <li>@Html.ActionLink($"{client.Name}", "Details", "Clients", new { id = client.ClientId })</li>
+  }
+</ul>
 
 <p>@Html.ActionLink("Edit Stylist", "Edit", new {id = Model.StylistId})</p>
 <p>@Html.ActionLink("Add Stylist", "Create")</p>
