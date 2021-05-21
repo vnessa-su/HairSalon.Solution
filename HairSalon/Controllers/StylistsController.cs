@@ -37,28 +37,36 @@ namespace HairSalon.Controllers
 
     public ActionResult Details(int id)
     {
-      return View();
+      Stylist selectedStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+      return View(selectedStylist);
     }
 
     public ActionResult Edit(int id)
     {
-      return View();
+      Stylist selectedStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+      return View(selectedStylist);
     }
 
     [HttpPost]
-    public ActionResult Edit()
+    public ActionResult Edit(Stylist stylist)
     {
+      _db.Entry(stylist).State = EntityState.Modified;
+      _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Delete(int id)
     {
-      return View();
+      Stylist selectedStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+      return View(selectedStylist);
     }
 
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
+      Stylist selectedStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+      _db.Stylists.Remove(selectedStylist);
+      _db.SaveChanges();
       return RedirectToAction("Index");
     }
   }
