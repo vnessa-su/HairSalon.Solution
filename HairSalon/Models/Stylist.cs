@@ -1,6 +1,6 @@
 namespace HairSalon.Models
 {
-  public class Model
+  public class Stylist
   {
     //properties
   }

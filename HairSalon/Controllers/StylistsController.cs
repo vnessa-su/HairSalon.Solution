@@ -7,11 +7,11 @@ using System.Linq;
 
 namespace HairSalon.Controllers
 {
-  public class ModelsController : Controller
+  public class StylistsController : Controller
   {
     private readonly HairSalonContext _db;
 
-    public ModelsController(HairSalonContext db)
+    public StylistsController(HairSalonContext db)
     {
       _db = db;
     }
