@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace HairSalon.Models
 {
   public class Client
