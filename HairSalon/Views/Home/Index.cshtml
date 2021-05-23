@@ -2,10 +2,12 @@
   Layout = "_Layout";
 }
 
-<h1>Eau Claire's Salon</h1>
+<h1 class="my-5">Eau Claire's Salon</h1>
 
-<p>@Html.ActionLink("List of Stylists", "Index", "Stylists")</p>
-<p>@Html.ActionLink("Add Stylist", "Create", "Stylists")</p>
+<div class="text-center m-5">
+  @Html.ActionLink("List of Stylists", "Index", "Stylists", null, new {@class = "btn btn-secondary btn-lg mx-2 my-1"})
+  @Html.ActionLink("Add Stylist", "Create", "Stylists", null, new {@class = "btn btn-secondary btn-lg mx-2 my-1"})
 
-<p>@Html.ActionLink("List of Clients", "Index", "Clients")</p>
-<p>@Html.ActionLink("Add Client", "Create", "Clients")</p>
+  @Html.ActionLink("List of Clients", "Index", "Clients", null, new {@class = "btn btn-secondary btn-lg mx-2 my-1"})
+  @Html.ActionLink("Add Client", "Create", "Clients", null, new {@class = "btn btn-secondary btn-lg mx-2 my-1"})
+</div>
