@@ -33,3 +33,8 @@ h1 {
 hr {
   background-color: whitesmoke;
 }
+
+.information-label {
+  color: rgb(56, 56, 56);
+  font-weight: bold;
+}
