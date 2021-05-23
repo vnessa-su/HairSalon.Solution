@@ -4,13 +4,21 @@
 
 @model HairSalon.Models.Stylist
 
-<h2>Are you sure you want to delete @Html.DisplayFor(model => model.Name)?</h2>
+<h1>Are you sure you want to delete @Html.DisplayFor(model => model.Name)?</h1>
 
 @using (Html.BeginForm())
 {
-  <input type="submit" value="Delete" />
+  <div class="text-center">
+    <input type="submit" value="Delete" class="btn btn-danger btn-lg my-2" />
+  </div>
 }
 
-<p>@Html.ActionLink("List of Stylists", "Index")</p>
-<p>@Html.ActionLink("List of Clients", "Index", "Clients")</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+<div class="text-center m-5">
+  @Html.ActionLink("Home", "Index", "Home", null, new {@class = "btn btn-secondary btn-lg mx-2 my-1"})
+
+  @Html.ActionLink("List of Stylists", "Index", "Stylists", null, new {@class = "btn btn-secondary btn-lg mx-2 my-1"})
+  @Html.ActionLink("Add Stylist", "Create", "Stylists", null, new {@class = "btn btn-secondary btn-lg mx-2 my-1"})
+
+  @Html.ActionLink("List of Clients", "Index", "Clients", null, new {@class = "btn btn-secondary btn-lg mx-2 my-1"})
+  @Html.ActionLink("Add Client", "Create", "Clients", null, new {@class = "btn btn-secondary btn-lg mx-2 my-1"})
+</div>
