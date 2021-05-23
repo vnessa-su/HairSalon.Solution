@@ -3,3 +3,11 @@
   background-size: cover;
   background-attachment: fixed;
 }
+
+h1 {
+  font-family: 'Satisfy', cursive;
+  color: white;
+  mix-blend-mode: difference;
+  text-align: center;
+  margin: 10px;
+}
