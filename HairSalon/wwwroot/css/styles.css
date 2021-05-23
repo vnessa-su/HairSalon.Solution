@@ -10,4 +10,6 @@ h1 {
   mix-blend-mode: difference;
   text-align: center;
   margin: 10px;
+  font-weight: bold;
+  text-shadow: 1px 1px black;
 }
