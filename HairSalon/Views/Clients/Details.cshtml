@@ -4,20 +4,38 @@
 
 @model HairSalon.Models.Client
 
-<h2>@Model.Name</h2>
+<h1>@Model.Name</h1>
 <hr/>
-<p>@Html.DisplayNameFor(model => model.Stylist): @Html.DisplayFor(model => model.Stylist.Name)</p>
-<p>@Html.DisplayNameFor(model => model.PhoneNumber): @Html.DisplayFor(model => model.PhoneNumber)</p>
-<p>@Html.DisplayNameFor(model => model.Email): @Html.DisplayFor(model => model.Email)</p>
-<p>@Html.DisplayNameFor(model => model.Address): @Html.DisplayFor(model => model.Address)</p>
 
-<p>@Html.ActionLink("Edit Client", "Edit", new {id = Model.ClientId})</p>
-<p>@Html.ActionLink("Delete Client", "Delete", new {id = Model.ClientId})</p>
+<div class="container page-content">
+  <div class="row px-3">
+    <p class="col-sm-4 information-label">@Html.DisplayNameFor(model => model.Stylist):</p>
+    <p class="col">@Html.DisplayFor(model => model.Stylist.Name)</p>
+  </div>
+  <div class="row px-3">
+    <p class="col-sm-4 information-label">@Html.DisplayNameFor(model => model.PhoneNumber):</p>
+    <p class="col">@Html.DisplayFor(model => model.PhoneNumber)</p>
+  </div>
+  <div class="row px-3">
+    <p class="col-sm-4 information-label">@Html.DisplayNameFor(model => model.Email):</p>
+    <p class="col">@Html.DisplayFor(model => model.Email)</p>
+  </div>
+  <div class="row px-3">
+    <p class="col-sm-4 information-label">@Html.DisplayNameFor(model => model.Address):</p>
+    <p class="col">@Html.DisplayFor(model => model.Address)</p>
+  </div>
+</div>
 
-<p>@Html.ActionLink("Add Client", "Create")</p>
-<p>@Html.ActionLink("List of Clients", "Index")</p>
+<div class="text-center m-2">
+  @Html.ActionLink("Edit Client", "Edit", new {id = Model.ClientId}, new {@class = "btn btn-primary btn-lg mx-2 my-1"})
+  @Html.ActionLink("Delete Client", "Delete", new {id = Model.ClientId}, new {@class = "btn btn-primary btn-lg mx-2 my-1"})
+</div>
+<div class="text-center m-3">
+  @Html.ActionLink("Home", "Index", "Home", null, new {@class = "btn btn-secondary btn-lg mx-2 my-1"})
 
-<p>@Html.ActionLink("Add Stylist", "Create", "Stylists")</p>
-<p>@Html.ActionLink("List of Stylists", "Index", "Stylists")</p>
+  @Html.ActionLink("List of Stylists", "Index", "Stylists", null, new {@class = "btn btn-secondary btn-lg mx-2 my-1"})
+  @Html.ActionLink("Add Stylist", "Create", "Stylists", null, new {@class = "btn btn-secondary btn-lg mx-2 my-1"})
 
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+  @Html.ActionLink("List of Clients", "Index", "Clients", null, new {@class = "btn btn-secondary btn-lg mx-2 my-1"})
+  @Html.ActionLink("Add Client", "Create", "Clients", null, new {@class = "btn btn-secondary btn-lg mx-2 my-1"})
+</div>
