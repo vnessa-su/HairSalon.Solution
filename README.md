@@ -50,9 +50,8 @@ MVC pattern web app that displays information on the stylists and clients of Eau
 5. Check that `vanessa_su` is selected: `mysql> SELECT DATABASE();`
 6. Load tables from provided file: `mysql> source vanessa_su.sql;`
 7. Check that the `Stylists` and `Clients` tables were loaded: `mysql> SHOW TABLES;`
-8. Leave the MySQL server running in this terminal
+8. Exit MySQL: `mysql> exit`
 * #### Run the Program
-1. Open a new terminal
 1. Navigate to the `/HairSalon` directory
 2. Create appsettings.json file: `touch appsettings.json`
 3. Open appsettings.json in a text editor and add in:
@@ -65,15 +64,15 @@ MVC pattern web app that displays information on the stylists and clients of Eau
 ```
   * Replace `<port number>` with the port number the server is running on, default is usually 3306
   * Replace `<password>` with your MySQL password
-5. Save the file and go back to the terminal
-6. Run `dotnet restore`
-7. Run `dotnet build`
-8. Start the program with `dotnet run`
-9. Open http://localhost:5000/ in your preferred browser
+4. Save the file and go back to the terminal
+5. Run `dotnet restore`
+6. Run `dotnet build`
+7. Start the program with `dotnet run`
+8. Open http://localhost:5001/ in your preferred browser
 
 ## Known Bugs
 
-* Can add empty entries that only contain Stylist Level for a stylist or Stylist for a client
+_No known bugs_
 
 ## Contact Information
 
