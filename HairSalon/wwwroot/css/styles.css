@@ -23,6 +23,7 @@ h1 {
   text-shadow: 1px 1px gray;
   font-size: x-large;
   color: black;
+  padding: 5px;
 }
 
 .person-link {
