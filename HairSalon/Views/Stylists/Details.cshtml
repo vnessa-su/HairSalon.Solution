@@ -4,27 +4,52 @@
 @using HairSalon.Models
 @model HairSalon.Models.Stylist
 
-<h2>@Model.Name</h2>
+<h1>@Model.Name</h1>
 <hr/>
-<p>@Html.DisplayFor(model => model.StylistLevel) Stylist</p>
-<p>@Html.DisplayNameFor(model => model.PhoneNumber): @Html.DisplayFor(model => model.PhoneNumber)</p>
-<p>@Html.DisplayNameFor(model => model.Email): @Html.DisplayFor(model => model.Email)</p>
-<p>@Html.DisplayNameFor(model => model.Address): @Html.DisplayFor(model => model.Address)</p>
 
-<p>@Html.DisplayNameFor(model => model.Clients):</p>
-<ul>
-  @foreach (Client client in Model.Clients)
+<div class="container page-content">
+  <p class="text-center py-2 information-label">@Html.DisplayFor(model => model.StylistLevel) Stylist</p>
+  <div class="row px-3">
+    <p class="col-sm-4 information-label">@Html.DisplayNameFor(model => model.PhoneNumber):</p>
+    <p class="col">@Html.DisplayFor(model => model.PhoneNumber)</p>
+  </div>
+  <div class="row px-3">
+    <p class="col-sm-4 information-label">@Html.DisplayNameFor(model => model.Email):</p>
+    <p class="col">@Html.DisplayFor(model => model.Email)</p>
+  </div>
+  <div class="row px-3">
+    <p class="col-sm-4 information-label">@Html.DisplayNameFor(model => model.Address):</p>
+    <p class="col">@Html.DisplayFor(model => model.Address)</p>
+  </div>
+
+  <p><span class="col-sm-4 information-label">@Html.DisplayNameFor(model => model.Clients):</span> </p>
+
+  @if (Model.Clients.Count == 0)
   {
-    <li>@Html.ActionLink($"{client.Name}", "Details", "Clients", new { id = client.ClientId })</li>
+    <h3 class="px-4 text-warning">No clients yet!</h3>
   }
-</ul>
+  <ul class="pb-3">
+    @foreach (Client client in Model.Clients)
+    {
+      <li class="px-3">
+        @Html.ActionLink($"{client.Name}", "Details", "Clients", new { id = client.ClientId }, new {@class = "person-link"})
+        <a href='@Url.Action("Edit", "Clients", new { id = client.ClientId })' title="Edit"><i class="fas fa-pencil-alt"></i></a>
+        <a href='@Url.Action("Delete", "Clients", new { id = client.ClientId })' title="Delete"><i class="fas fa-trash-alt"></i></a>
+      </li>
+    }
+  </ul>
+</div>
 
-<p>@Html.ActionLink("Edit Stylist", "Edit", new {id = Model.StylistId})</p>
-<p>@Html.ActionLink("Delete Stylist", "Delete", new {id = Model.StylistId})</p>
-<p>@Html.ActionLink("Add Stylist", "Create")</p>
-<p>@Html.ActionLink("List of Stylists", "Index")</p>
+<div class="text-center m-2">
+  @Html.ActionLink("Edit Stylist", "Edit", new {id = Model.StylistId}, new {@class = "btn btn-primary btn-lg mx-2 my-1"})
+  @Html.ActionLink("Delete Stylist", "Delete", new {id = Model.StylistId}, new {@class = "btn btn-primary btn-lg mx-2 my-1"})
+</div>
+<div class="text-center m-3">
+  @Html.ActionLink("Home", "Index", "Home", null, new {@class = "btn btn-secondary btn-lg mx-2 my-1"})
 
-<p>@Html.ActionLink("Add Client", "Index", "Create")</p>
-<p>@Html.ActionLink("List of Clients", "Index", "Clients")</p>
+  @Html.ActionLink("List of Stylists", "Index", "Stylists", null, new {@class = "btn btn-secondary btn-lg mx-2 my-1"})
+  @Html.ActionLink("Add Stylist", "Create", "Stylists", null, new {@class = "btn btn-secondary btn-lg mx-2 my-1"})
 
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+  @Html.ActionLink("List of Clients", "Index", "Clients", null, new {@class = "btn btn-secondary btn-lg mx-2 my-1"})
+  @Html.ActionLink("Add Client", "Create", "Clients", null, new {@class = "btn btn-secondary btn-lg mx-2 my-1"})
+</div>
