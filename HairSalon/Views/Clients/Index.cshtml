@@ -17,7 +17,8 @@
     @foreach (Client client in Model)
     {
       <li>
-        @Html.ActionLink($"{client.Name}", "Details", new { id = client.ClientId }, new {@class = "person-link"})
+        @Html.ActionLink($"{client.Name}", "Details", new { id = client.ClientId }, new {@class = "person-link"}) |
+        @client.Stylist.Name 
         <a href='@Url.Action("Edit", "Clients", new { id = client.ClientId })' title="Edit"><i class="fas fa-pencil-alt"></i></a>
         <a href='@Url.Action("Delete", "Clients", new { id = client.ClientId })' title="Delete"><i class="fas fa-trash-alt"></i></a>
       </li>
